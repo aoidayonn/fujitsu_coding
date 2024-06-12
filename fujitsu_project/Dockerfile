@@ -4,7 +4,7 @@ FROM python:3.9-slim
 # 作業ディレクトリを設定
 WORKDIR /app
 
-RUN echo 'export PATH="/home/myuser/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
+RUN echo 'export PATH="/home/myuser/.local/bin:$PATH"' >> ~/.bashrc
 
 # ファイルをコピー
 COPY . .
