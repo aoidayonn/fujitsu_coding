@@ -16,7 +16,7 @@ RUN pip install --upgrade pip
 # 必要なパッケージをインストール
 RUN pip install --no-cache-dir Flask gunicorn
 
-RUN echo 'export PATH="/home/myuser/.local/bin:$PATH"'
+RUN echo 'export PATH="/home/myuser/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
 
 # アプリを起動
 CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000"]
