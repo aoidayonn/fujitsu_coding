@@ -12,10 +12,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN pip install --upgrade pip
 
-# 非特権ユーザーを作成
-RUN useradd -m myuser
-USER myuser
-
 # 仮想環境を作成
 RUN python3 -m venv venv
 
