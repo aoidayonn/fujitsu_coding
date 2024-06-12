@@ -15,8 +15,7 @@ RUN useradd -m myuser
 USER myuser
 
 # パスを設定
-RUN echo 'export PATH="/home/myuser/local/lib/python3.9/site-packages"' >> ~/.bashrc
-SHELL ["/bin/bash", "-c"]
+ENV PATH="/home/myuser/.local/bin:${PATH}"
 
 # ファイルをコピー
 COPY . .
