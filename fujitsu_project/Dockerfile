@@ -1,6 +1,8 @@
 # ベースイメージを指定
 FROM python:3.9-slim
 
+EXPOSE 8080
+
 # 作業ディレクトリを設定
 WORKDIR /app
 
