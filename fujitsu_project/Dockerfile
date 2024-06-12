@@ -16,13 +16,19 @@ RUN pip install --upgrade pip
 RUN useradd -m myuser
 USER myuser
 
+# 仮想環境を作成
+RUN python3 -m venv venv
+
+# 仮想環境をアクティベート
+RUN /bin/bash -c "source venv/bin/activate"
+
 # パスを設定
 ENV PATH="/home/myuser/.local/bin:${PATH}"
 
 # ファイルをコピー
 COPY . .
 
-# 必要なパッケージをインストール
+# 依存パッケージをインストール
 RUN pip install --no-cache-dir Flask gunicorn
 
 # アプリを起動
