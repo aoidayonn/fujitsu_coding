@@ -12,12 +12,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN pip install --upgrade pip
 
-# 仮想環境を作成
-RUN python3 -m venv venv
-
-# 仮想環境をアクティベート
-RUN /bin/bash -c "source venv/bin/activate"
-
 # パスを設定
 ENV PATH="/home/myuser/.local/bin:${PATH}"
 
