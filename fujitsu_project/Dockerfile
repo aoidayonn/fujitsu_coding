@@ -7,6 +7,10 @@ WORKDIR /app
 # ファイルをコピー
 COPY . .
 
+# 非特権ユーザーを作成
+RUN useradd -m myuser
+USER myuser
+
 RUN pip install --upgrade pip
 
 # 必要なパッケージをインストール
