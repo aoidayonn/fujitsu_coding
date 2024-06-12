@@ -28,4 +28,4 @@ COPY . .
 RUN pip install --no-cache-dir Flask gunicorn
 
 # アプリを起動
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000"]
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:8080"]
