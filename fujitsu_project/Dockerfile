@@ -17,13 +17,13 @@ RUN useradd -m myuser
 USER myuser
 
 # 仮想環境を作成
-RUN python3 -m venv /app/venv
+RUN python3 -m venv venv
 
 # 仮想環境をアクティベート
-RUN /bin/bash -c "source /app/venv/bin/activate"
+RUN /bin/bash -c "source venv/bin/activate"
 
 # パスを設定
-ENV PATH="/app/venv/bin:${PATH}"
+ENV PATH="/home/myuser/.local/bin:${PATH}"
 
 # ファイルをコピー
 COPY . .
